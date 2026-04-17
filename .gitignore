@@ -1,8 +1,16 @@
+# CMake user preset
+CMakeUserPresets.json
+
 # Cache folder
 .cache/
 
 # Build folder
 build/
+cmake-build-debug/
+
+# IDE ignores
+.idea/
+.vscode/
 
 # Prerequisites
 *.d

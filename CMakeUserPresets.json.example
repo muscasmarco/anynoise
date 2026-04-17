@@ -1,0 +1,13 @@
+{
+  "version": 3,
+  "configurePresets": [
+    {
+      "name": "local",
+      "inherits": "default",
+      "cacheVariables": {
+        "CMAKE_PREFIX_PATH": "~/Qt/6.9.3/gcc_64",
+        "Qt6_DIR": "~/Qt/6.9.3/gcc_64/lib/cmake/Qt6"
+      }
+    }
+  ]
+}

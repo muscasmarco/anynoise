@@ -4,15 +4,36 @@ A simple GUI app for playing white noise.
 
 # Building 
 
-For now I'm running both the Qt6 libraries installed and made available by my OS and
-the ones downloaded from the Qt6 provided tool for tools management (Qt Management Tool).
+## Prerequisites
 
-The build command, at least for me is: 
+- `cmake`
+- `ninja`
+- `Qt6` installed somewhere
+
+## User configuration
+
+As you need to specify where **your** Qt6 installation folder is, the best thing you 
+can do is copying the `CMakeUserPresets.json.example` file and customizing it 
+to your needs. 
+
+Your personal configuration shall be called `CMakeUserPresets.json`. 
+
+## Build command
 
 ```bash
+cmake --preset local
+
 cd build/
-cmake -DCMAKE_PREFIX_PATH=~/Qt/6.9.3/gcc_64 -DQt6_DIR=~/Qt/6.9.3/gcc_64/lib/cmake/ ..
+ninja
+
+./anynoise
 ```
+
+### One-liner build and run command
+```bash
+cmake --preset local && ninja -C build/ && build/anynoise
+```
+
 
 ## Did VSCode's Intellisense break?
 
