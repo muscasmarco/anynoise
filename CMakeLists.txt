@@ -21,7 +21,8 @@ add_executable(${PROJECT_NAME} src/main.cpp src/utils/constants.hpp src/main.cpp
 qt_policy(SET QTP0001 NEW)
 qt_policy(SET QTP0004 NEW)
 
-add_subdirectory(ui/MainWindow) # Import to the external module for MainWindow - the mainWindow QML build
+add_subdirectory(ui/MainWindow)    # Import to the external module for MainWindow - the mainWindow QML build
+add_subdirectory(ui/MediaToolBar)  # MediaToolBar library
 
 target_link_libraries(${PROJECT_NAME} PRIVATE
 		Qt6::Quick
@@ -29,6 +30,9 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
     	Qt6::Gui
     	Qt6::Multimedia
 		MainWindowlib
+		MainWindowlibplugin
+		MediaToolBarlib
+		MediaToolBarlibplugin
 )
 
 set_target_properties(${PROJECT_NAME} PROPERTIES
