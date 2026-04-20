@@ -20,13 +20,15 @@ add_executable(${PROJECT_NAME} src/main.cpp src/utils/constants.hpp src/main.cpp
 
 qt_policy(SET QTP0001 NEW)
 qt_policy(SET QTP0004 NEW)
-qt_add_qml_module(${PROJECT_NAME} URI MainWindow QML_FILES ui/MainWindow.qml)
+
+add_subdirectory(ui/MainWindow) # Import to the external module for MainWindow - the mainWindow QML build
 
 target_link_libraries(${PROJECT_NAME} PRIVATE
 		Qt6::Quick
 		Qt6::Core
     	Qt6::Gui
     	Qt6::Multimedia
+		MainWindowlib
 )
 
 set_target_properties(${PROJECT_NAME} PROPERTIES
